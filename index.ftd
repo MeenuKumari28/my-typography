@@ -1,108 +1,84 @@
--- import: fifthtry.github.io/package-doc/doc as pd
--- import: fifthtry.github.io/package-doc/forest-theme as ds
--- import: fifthtry.github.io/package-doc/footer
--- import: fifthtry.github.io/inter-font/assets as inter-assets
-
-;; ⚠️fastn-builders::⚠️ before using this file please find and replace inter-font
-;; with font package name you have given inside this package 
-;; `<user_name>.github.io/<repo_name>/FASTN.ftd file
-;; `<font-name>` replace with font you are using. 
-;; remove these comments once you are done.
+-- import: meenukumari28.github.io/my-font-typo/assets as my-font-typo-assets
 
 
 
--- ds.page: 
-show-footer: true
-site-name: `<repo_name>`
 
--- ds.page.footer:
+-- site-doc.doc-home: my-typography package
+site-title: `my-typography`
+show-tabs: false
+github-url: meenukumari28.github.io/my-typography
+current-package: meenukumari28.github.io/my-typography
 
--- footer.fastn-footer:
+-- site-doc.header: Example
 
--- end: ds.page.footer
+This FTD font `my-typography` can be used for your ftd web projects. 
 
--- pd.package: <repo_name> package
-name: <user_name>.github.io/<repo_name>
-
-This FTD font `<repo_name>` can be used for your ftd web projects. 
-
-You can use this <repo_name> inside the `FTD` project. Follow below
+You can use this my-typography inside the `FTD` project. Follow below
 instructions to use this font package.
 
--- ds.h3: How to use <repo_name>?
+-- site-doc.header: How to use my-typography?
 
-To use this <repo_name> inside your `ftd` web project, if you are
+To use this my-typography inside your `ftd` web project, if you are
 using our [doc-site](https://github.com/fifthtry/doc-site) theme then you just
 have to pass types to `ds.page`
 
 Let's say you are using `doc-site` inside your project then, it's as simple as
 making a sandwich.
 
--- ds.code: Add this to your FASTN.ftd
+-- cb.code: Add this to your FASTN.ftd
 lang: ftd
 
-\-- fastn.dependency: <user_name>.github.io/<repo_name>
+\-- fastn.dependency: meenukumari28.github.io/my-typography
 
--- ds.markdown:
+Now import `my-typography` inside `.ftd` file as shown below:
 
-Now import `<repo_name>` inside `.ftd` file as shown below:
-
--- ds.code:
+-- cb.code:
 lang: ftd
 
-\-- import: <user_name>.github.io/<repo_name>
+\-- import: meenukumari28.github.io/my-typography
 
-
--- ds.markdown: 
-
-add `<repo_name>` `types` to `ds.page` `types` attribute as shown
+add `my-typography` `types` to `ds.page` `types` attribute as shown
 below:
 
--- ds.code:
+-- cb.code:
 lang: ftd
 
 \-- ds.page:
-types: $<repo_name>.types
-
--- ds.markdown: 
-
-Once you add `types: $<repo_name>.types` inside your `.ftd` file,
-`<repo_name>` will be added as `fastn` default typography to your
+types: $my-typography.types
+ 
+Once you add `types: $my-typography.types` inside your `.ftd` file,
+`my-typography` will be added as `fastn` default typography to your
 `ds.page` and to all components you add inside `ds.page`.
 
 If you're not using `doc-site` theme and building your own `fastn` web theme.
-Then, add `<repo_name>` dependency into `FASTN.ftd` file.
+Then, add `my-typography` dependency into `FASTN.ftd` file.
 
--- ds.code:
+-- cb.code:
 lang: ftd
 
-\-- fastn.dependency: <user_name>.github.io/<repo_name>
+\-- fastn.dependency: meenukumari28.github.io/my-typography
 
--- ds.markdown:
-
-Once you add above dependency, then import `<repo_name>` inside your
+Once you add above dependency, then import `my-typography` inside your
 `.ftd` file:
 
--- ds.code:
+-- cb.code:
 lang: ftd
 
-\-- import: <user_name>.github.io/<repo_name>
+\-- import: meenukumari28.github.io/my-typography
 
--- ds.markdown:
+Done! `my-typography` is now added. Lets define a `page` component:
 
-Done! `<repo_name>` is now added. Lets define a `page` component:
-
--- ds.code:
+-- cb.code:
 lang: ftd
 download: my-ds.ftd
 
-\-- import: <user_name>.github.io/<repo_name>
+\-- import: meenukumari28.github.io/my-typography
 
 \-- component page:
 caption title:
 body body:
 children wrap:
-ftd.type-data types: $<repo_name>.types
+ftd.type-data types: $my-typography.types
 
 \-- ftd.column:
 width: fill-container
@@ -134,14 +110,11 @@ children: $page.wrap
 
 \-- end: page
 
-
--- ds.markdown:
-
 In above code snippet we defined `page` component which has `types`, `title`,
 `body` and  `wrap` attributes.
 
 The `types` attribute used to pass a typography to it. In above example we have
-added `$<repo_name>.types` as default `ftd.type-data`. The
+added `$my-typography.types` as default `ftd.type-data`. The
 `ftd.type-data` contains all `fastn` default `inherited` types.
 
 The `title` attribute will be used for adding `page` titles. 
@@ -155,23 +128,22 @@ add any other component inside `page`.
 Click on download icon on above code snippet `my-ds.ftd` file will be
 downloaded. 
 
--- ds.rendered:
-download: types.ftd
-
--- ds.rendered.input:
+-- cb.code:
+lang: ftd
+download: my-ds.ftd
 
 \-- import: <your-fastn-package-name>/my-ds
 
 \-- my-ds.page: I am a page title
 
-I am `page` component body. Body can contain multiple paragraphs, links etc.
+\ I am `page` component body. Body can contain multiple paragraphs, links etc.
 
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+\ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 Ipsum has been the industry’s standard dummy
 
-- I am a list item.
+\- I am a list item.
 
-- I am a list item.
+\- I am a list item.
 
 \-- ftd.text: I am a child component of `page`
 role: $inherited.types.heading-medium
@@ -179,8 +151,9 @@ color: $inherited.colors.text
 
 \-- end: my-ds.page
 
-
--- ds.rendered.output:
+-- site-doc.output:
+colors: $ftd.default-colors
+types: $ftd.default-types
 
 -- page: I am a page title
 types: $types
@@ -200,11 +173,9 @@ color: $inherited.colors.text
 
 -- end: page
 
--- end: ds.rendered.output
+-- end: site-doc.output
 
--- end: ds.rendered
-
--- ds.markdown:
+-- site-doc.header: How to use
 
 Click on download icon on above code snippet `types.ftd` file will be
 downloaded, add previously downloaded `my-ds.ftd` and `types.ftd` inside
@@ -212,14 +183,14 @@ downloaded, add previously downloaded `my-ds.ftd` and `types.ftd` inside
 name and run `fastn serve`, load localhost web page on browser.
 
 e.g. `http://127.0.0.1:8001/types` You will see the `page` component using
-`<repo_name>` `types` applied to `inherited` types.
+`my-typography` `types` applied to `inherited` types.
 
 Done! isn't it simple? Try this and don't forget to jump on our [Discord](https://discord.gg/bucrdvptYd)
 
 [Click here](fastn-typography/) to know more `fastn` predefined `inherited`
-types using `<font-name>-font` font-family and font-sizes.
+types using `Skranji-font` font-family and font-sizes.
 
--- end: ds.page
+-- end: site-doc.doc-home
 
 
 
@@ -237,14 +208,14 @@ line-height.px: 60
 size.px: 52
 letter-spacing.px: 0
 weight: 700
-font-family: $inter-assets.fonts.Inter
+font-family: $my-font-typo-assets.fonts.Skranji
 
 -- ftd.type heading-hero-desktop:
 line-height.px: 60
 size.px: 52
 letter-spacing.px: 0
 weight: 700
-font-family: $inter-assets.fonts.Inter
+font-family: $my-font-typo-assets.fonts.Skranji
 
 -- ftd.responsive-type heading-hero:
 desktop: $heading-hero-desktop
@@ -259,14 +230,14 @@ line-height.px: 48
 size.px: 40
 letter-spacing.px: 0
 weight: 700
-font-family: $inter-assets.fonts.Inter
+font-family: $my-font-typo-assets.fonts.Skranji
 
 -- ftd.type heading-large-desktop:
 line-height.px: 48
 size.px: 40
 letter-spacing.px: 0
 weight: 700
-font-family: $inter-assets.fonts.Inter
+font-family: $my-font-typo-assets.fonts.Skranji
 
 -- ftd.responsive-type heading-large:
 desktop: $heading-large-desktop
@@ -281,13 +252,13 @@ line-height.px: 44
 size.px: 32
 letter-spacing.px: 0
 weight: 600
-font-family: $inter-assets.fonts.Inter
+font-family: $my-font-typo-assets.fonts.Skranji
 
 -- ftd.type heading-medium-desktop:
 line-height.px: 44
 size.px: 32
 letter-spacing.px: 0
-font-family: $inter-assets.fonts.Inter
+font-family: $my-font-typo-assets.fonts.Skranji
 weight: 600
 
 -- ftd.responsive-type heading-medium:
@@ -303,14 +274,14 @@ line-height.px: 36
 size.px: 24
 letter-spacing.px: 0
 weight: 500
-font-family: $inter-assets.fonts.Inter
+font-family: $my-font-typo-assets.fonts.Skranji
 
 -- ftd.type heading-small-desktop:
 line-height.px: 36
 size.px: 24
 letter-spacing.px: 0
 weight: 500
-font-family: $inter-assets.fonts.Inter
+font-family: $my-font-typo-assets.fonts.Skranji
 
 -- ftd.responsive-type heading-small:
 desktop: $heading-small-desktop
@@ -326,14 +297,14 @@ line-height.px: 26
 size.px: 18
 letter-spacing.px: 0
 weight: 500
-font-family: $inter-assets.fonts.Inter
+font-family: $my-font-typo-assets.fonts.Skranji
 
 -- ftd.type heading-tiny-desktop:
 line-height.px: 26
 size.px: 18
 letter-spacing.px: 0
 weight: 500
-font-family: $inter-assets.fonts.Inter
+font-family: $my-font-typo-assets.fonts.Skranji
 
 -- ftd.responsive-type heading-tiny:
 desktop: $heading-tiny-desktop
@@ -348,13 +319,13 @@ line-height.px: 28
 size.px: 20
 letter-spacing.px: 0
 weight: 400
-font-family: $inter-assets.fonts.Inter
+font-family: $my-font-typo-assets.fonts.Skranji
 
 -- ftd.type copy-large-desktop:
 line-height.px: 28
 size.px: 20
 letter-spacing.px: 0
-font-family: $inter-assets.fonts.Inter
+font-family: $my-font-typo-assets.fonts.Skranji
 weight: 400
 
 -- ftd.responsive-type copy-large:
@@ -370,13 +341,13 @@ line-height.px: 24
 size.px: 16
 letter-spacing.px: 0
 weight: 400
-font-family: $inter-assets.fonts.Inter
+font-family: $my-font-typo-assets.fonts.Skranji
 
 -- ftd.type copy-regular-desktop:
 line-height.px: 24
 size.px: 16
 letter-spacing.px: 0
-font-family: $inter-assets.fonts.Inter
+font-family: $my-font-typo-assets.fonts.Skranji
 weight: 400
 
 -- ftd.responsive-type copy-regular:
@@ -392,7 +363,7 @@ line-height.px: 20
 size.px: 16
 letter-spacing.px: 0
 weight: 400
-font-family: $inter-assets.fonts.Inter
+font-family: $my-font-typo-assets.fonts.Skranji
 
 
 -- ftd.type copy-small-desktop:
@@ -400,7 +371,7 @@ line-height.px: 20
 size.px: 16
 letter-spacing.px: 0
 weight: 400
-font-family: $inter-assets.fonts.Inter
+font-family: $my-font-typo-assets.fonts.Skranji
 
 -- ftd.responsive-type copy-small:
 desktop: $copy-small-desktop
@@ -415,14 +386,14 @@ line-height.px: 18
 size.px: 14
 letter-spacing.px: 0
 weight: 400
-font-family: $inter-assets.fonts.Inter
+font-family: $my-font-typo-assets.fonts.Skranji
 
 -- ftd.type fine-print-desktop:
 line-height.px: 18
 size.px: 14
 letter-spacing.px: 0
 weight: 400
-font-family: $inter-assets.fonts.Inter
+font-family: $my-font-typo-assets.fonts.Skranji
 
 -- ftd.responsive-type fine-print:
 desktop: $fine-print-desktop
@@ -437,14 +408,14 @@ line-height.px: 16
 size.px: 14
 letter-spacing.px: 0
 weight: 400
-font-family: $inter-assets.fonts.Inter
+font-family: $my-font-typo-assets.fonts.Skranji
 
 -- ftd.type blockquote-desktop:
 line-height.px: 16
 size.px: 14
 letter-spacing.px: 0
 weight: 400
-font-family: $inter-assets.fonts.Inter
+font-family: $my-font-typo-assets.fonts.Skranji
 
 -- ftd.responsive-type blockquote:
 desktop: $blockquote-desktop
@@ -459,14 +430,14 @@ line-height.px: 16
 size.px: 14
 letter-spacing.px: 0
 weight: 400
-font-family: $inter-assets.fonts.Inter
+font-family: $my-font-typo-assets.fonts.Skranji
 
 -- ftd.type source-code-desktop:
 line-height.px: 16
 size.px: 14
 letter-spacing.px: 0
 weight: 400
-font-family: $inter-assets.fonts.Inter
+font-family: $my-font-typo-assets.fonts.Skranji
 
 -- ftd.responsive-type source-code:
 desktop: $source-code-desktop
@@ -481,14 +452,14 @@ line-height.px: 22
 size.px: 16
 letter-spacing.px: 0
 weight: 400
-font-family: $inter-assets.fonts.Inter
+font-family: $my-font-typo-assets.fonts.Skranji
 
 -- ftd.type label-large-desktop:
 line-height.px: 22
 size.px: 16
 letter-spacing.px: 0
 weight: 400
-font-family: $inter-assets.fonts.Inter
+font-family: $my-font-typo-assets.fonts.Skranji
 
 -- ftd.responsive-type label-large:
 desktop: $label-large-desktop
@@ -503,14 +474,14 @@ line-height.px: 16
 size.px: 14
 letter-spacing.px: 0
 weight: 400
-font-family: $inter-assets.fonts.Inter
+font-family: $my-font-typo-assets.fonts.Skranji
 
 -- ftd.type label-small-desktop:
 line-height.px: 16
 size.px: 14
 letter-spacing.px: 0
 weight: 400
-font-family: $inter-assets.fonts.Inter
+font-family: $my-font-typo-assets.fonts.Skranji
 
 -- ftd.responsive-type label-small:
 desktop: $label-small-desktop
@@ -525,14 +496,14 @@ line-height.px: 24
 size.px: 18
 letter-spacing.px: 0
 weight: 700
-font-family: $inter-assets.fonts.Inter
+font-family: $my-font-typo-assets.fonts.Skranji
 
 -- ftd.type button-large-desktop:
 line-height.px: 24
 size.px: 18
 letter-spacing.px: 0
 weight: 700
-font-family: $inter-assets.fonts.Inter
+font-family: $my-font-typo-assets.fonts.Skranji
 
 -- ftd.responsive-type button-large:
 desktop: $button-large-desktop
@@ -547,14 +518,14 @@ line-height.px: 21
 size.px: 16
 letter-spacing.px: 0
 weight: 400
-font-family: $inter-assets.fonts.Inter
+font-family: $my-font-typo-assets.fonts.Skranji
 
 -- ftd.type button-medium-desktop:
 line-height.px: 21
 size.px: 16
 letter-spacing.px: 0
 weight: 700
-font-family: $inter-assets.fonts.Inter
+font-family: $my-font-typo-assets.fonts.Skranji
 
 -- ftd.responsive-type button-medium:
 desktop: $button-medium-desktop
@@ -569,14 +540,14 @@ line-height.px: 19
 size.px: 14
 letter-spacing.px: 0
 weight: 400
-font-family: $inter-assets.fonts.Inter
+font-family: $my-font-typo-assets.fonts.Skranji
 
 -- ftd.type button-small-desktop:
 line-height.px: 19
 size.px: 14
 letter-spacing.px: 0
 weight: 700
-font-family: $inter-assets.fonts.Inter
+font-family: $my-font-typo-assets.fonts.Skranji
 
 -- ftd.responsive-type button-small:
 desktop: $button-small-desktop
@@ -591,14 +562,14 @@ line-height.px: 19
 size.px: 14
 letter-spacing.px: 0
 weight: 400
-font-family: $inter-assets.fonts.Inter
+font-family: $my-font-typo-assets.fonts.Skranji
 
 -- ftd.type link-desktop:
 line-height.px: 19
 size.px: 14
 letter-spacing.px: 0
 weight: 700
-font-family: $inter-assets.fonts.Inter
+font-family: $my-font-typo-assets.fonts.Skranji
 
 -- ftd.responsive-type link:
 desktop: $link-desktop

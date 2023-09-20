@@ -1,32 +1,23 @@
 -- import: fifthtry.github.io/package-doc/doc as pd
 -- import: fifthtry.github.io/package-doc/forest-theme as ds
 -- import: fifthtry.github.io/package-doc/footer
--- import: <user_name>.github.io/<repo_name>
+-- import: meenukumari28.github.io/my-typography
 
 
 
 
--- ds.page: 
-show-footer: true
-site-name: `<repo_name>`
+-- site-doc.doc-home: my-typography package
+site-title: `my-typography`
+show-tabs: false
+github-url: meenukumari28.github.io/my-typography
+current-package: meenukumari28.github.io/my-typography
 
--- ds.page.footer:
-
--- footer.fastn-footer:
-
--- end: ds.page.footer
-
--- pd.package: <repo_name>
-name: <user_name>.github.io/<repo_name>
-
-Below are our default fastn `inherited` font types of <repo_name>.
-
+Below are our default fastn `inherited` font types of my-typography.
 
 -- display-type:
-types: $<repo_name>.types
+types: $my-typography.types
 
-
--- end: ds.page
+-- end: site-doc.doc-home
 
 
 
