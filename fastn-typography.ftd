@@ -6,27 +6,18 @@
 
 
 
--- ds.page: 
-show-footer: true
-site-name: `my-typography`
-
--- ds.page.footer:
-
--- footer.fastn-footer:
-
--- end: ds.page.footer
-
--- pd.package: my-typography
-name: meenukumari28.github.io/my-typography
+-- site-doc.doc-home: my-typography package
+site-title: `my-typography`
+show-tabs: false
+github-url: meenukumari28.github.io/my-typography
+current-package: meenukumari28.github.io/my-typography
 
 Below are our default fastn `inherited` font types of my-typography.
-
 
 -- display-type:
 types: $my-typography.types
 
-
--- end: ds.page
+-- end: site-doc.doc-home
 
 
 
